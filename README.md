@@ -1,7 +1,7 @@
 # Credit-suisse-event-log-details
 Coding Assignment of Credit-suisse
 
-the service layered Architecture has been followed in this application where I am using two controllers 
+The service-layered Architecture has been followed in this application where I am using two controllers 
 one to save the events and other one to fetch all the saved events.
 
 I have used In-memory HSQL DB. Details of it must be available in the application.properties file.
