@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.Gson;
 import com.suisse.credit.eventlogs.controller.EventDetailController;
 import com.suisse.credit.eventlogs.entity.EventDetail;
+import com.suisse.credit.eventlogs.exception.NotFoundException;
 import com.suisse.credit.eventlogs.model.LogDetail;
 import com.suisse.credit.eventlogs.repository.EventRepository;
 
@@ -37,8 +38,8 @@ public class EventServiceImpl implements EventService {
 	public List<EventDetail> findAllEvents() {
 		log.info("Inside findAllEvents() method in the EventServiceImpl class");
 		List<EventDetail> events = eventRepo.findAll();
-		if(events!=null) return events;
-		return null;
+		if(events.size()!= 0) return events;
+		throw new NotFoundException("No Events found");
 	}
 
 	@Override

@@ -35,8 +35,8 @@ public class EventDetailController {
 	}
 	
 	@GetMapping("/")
-	public ResponseEntity<List<EventDetail>> findAllEvents(){
+	public List<EventDetail> findAllEvents(){
 		log.info("inside findAllEvents() method in EventDetailController Class");
-		return ResponseEntity.status(HttpStatus.OK).body(eventService.findAllEvents());		
+		return eventService.findAllEvents();		
 	}
 }
